@@ -5,14 +5,8 @@ namespace Vend
 	/// <summary>
 	/// Product inventory item.
 	/// </summary>
-	public class ProductInventoryItem : BaseApiObject
+	public class ProductInventoryItem
 	{
-		/// <summary>
-		/// Gets or sets the product identifier.
-		/// </summary>
-		/// <value>The product identifier.</value>
-		public string ProductId { get; set; }
-
 		/// <summary>
 		/// Gets or sets the outlet identifier.
 		/// </summary>
@@ -20,10 +14,10 @@ namespace Vend
 		public string OutletId { get; set; }
 
 		/// <summary>
-		/// Gets or sets the attributed cost.
+		/// Gets or sets the name of the outlet.
 		/// </summary>
-		/// <value>The attributed cost.</value>
-		public float AttributedCost { get; set; }
+		/// <value>The name of the outlet.</value>
+		public string OutletName { get; set; }
 
 		/// <summary>
 		/// Gets or sets the count.
