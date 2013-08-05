@@ -46,13 +46,15 @@
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\ProductType.cs" />
     <Compile Include="Model\ProductBrand.cs" />
-    <Compile Include="Model\ProductInventoryItem.cs" />
     <Compile Include="Model\PricebookEntry.cs" />
     <Compile Include="Model\Inventory.cs" />
     <Compile Include="Model\Outlet.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Consignment.cs" />
     <Compile Include="Model\CustomerContact.cs" />
+    <Compile Include="Model\ProductInventoryItem.cs" />
+    <Compile Include="Model\InventoryItem.cs" />
+    <Compile Include="Model\ProductPricebookEntry.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
