@@ -68,4 +68,3 @@ namespace Vend
 		public Tax Tax { get; set; }
 	}
 }
-

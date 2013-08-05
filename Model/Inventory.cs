@@ -18,7 +18,5 @@ namespace Vend
 		/// </summary>
 		/// <value>The product.</value>
 		public Product Product { get; set; }
-
-
 	}
 }
