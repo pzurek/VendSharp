@@ -1,43 +1,38 @@
 using System;
-using System.Collections.Generic;
-using System.Net.Http;
+
+using RestSharp;
 
 namespace Vend
 {
-	public class Client
+	public partial class Client
 	{
-		public Client()
+		public string BaseUrl;
+		public string StoreName;
+		public string Username;
+		public string Password;
+
+		public Client(string storeName, string username, string password)
 		{
-			HttpClient httpClient = new HttpClient();
-			httpClient.BaseAddress = new Uri("http://piotr.vendhq.com");
+			BaseUrl = string.Format("https://{0}.vendhq.com/api/", storeName);
+			Username = username;
+			Password = password;
 		}
 
-		public static List<User> GetUsers()
+		public T Execute<T>(IRestRequest request) where T : new()
 		{
-			var users = new List<User>();
-			return users;
-		}
+			var client = new RestClient();
+			client.BaseUrl = BaseUrl;
+			client.Authenticator = new HttpBasicAuthenticator(Username, Password);
 
-		public static List<Register> GetRegisters()
-		{
-			var registers = new List<Register>();
+			var response = client.Execute<T>(request);
 
-			return registers;
-		}
-
-		public static List<Product> GetProducts()
-		{
-			var products = new List<Product>();
-
-			return products;
-		}
-
-		public static List<Customer> GetCustomers()
-		{
-			var customers = new List<Customer>();
-
-
-			return customers;
+			if (response.ErrorException != null)
+			{
+				const string message = "Error retrieving response.  Check inner details for more info.";
+				var exception = new ApplicationException(message, response.ErrorException);
+				throw exception;
+			}
+			return response.Data;
 		}
 	}
 }
