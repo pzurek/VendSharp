@@ -1,14 +1,18 @@
 namespace Vend
 {
+	/// <summary>
+	/// Consignment.
+	/// </summary>
+	/// <remarks>Based on 0.x API payload.</remarks>
 	public class Consignment : BaseApiObject
 	{
 		public string Name { get; set; }
 
 		public string ConsignmentDate { get; set; }
 
-		public object DueAt { get; set; }
+		public string DueAt { get; set; }
 
-		public object ReceivedAt { get; set; }
+		public string ReceivedAt { get; set; }
 
 		public string RetailerId { get; set; }
 
@@ -22,6 +26,6 @@ namespace Vend
 
 		public string Type { get; set; }
 
-		public object AccountsTransactionId { get; set; }
+		public string AccountsTransactionId { get; set; }
 	}
 }

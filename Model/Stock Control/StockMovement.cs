@@ -16,7 +16,7 @@ namespace Vend
 
 		public string Status { get; set; }
 
-		public object ReceivedAt { get; set; }
+		public string ReceivedAt { get; set; }
 
 		public string CreatedAt { get; set; }
 
@@ -24,7 +24,7 @@ namespace Vend
 
 		public string SourceOutletId { get; set; }
 
-		public object DueAt { get; set; }
+		public string DueAt { get; set; }
 
 		public List<StockMovementProduct> Products { get; set; }
 	}
