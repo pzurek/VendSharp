@@ -56,8 +56,10 @@ namespace Vend
 
 		public List<Composite> Composites { get; set; }
 
-		public List<PriceBookEntry> PriceBookEntries { get; set; }
+		public List<PricebookEntry> PricebookEntries { get; set; }
 
+		// Not used for selling. Not sure for what exactly it is
+		// but the Sell screen takes it from the pricebook
 		public double Price { get; set; }
 
 		public double Tax { get; set; }
