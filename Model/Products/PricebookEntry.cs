@@ -1,6 +1,6 @@
 namespace Vend
 {
-	public class PriceBookEntry : BaseApiObject
+	public class PricebookEntry : BaseApiObject
 	{
 		public string ProductId { get; set; }
 
