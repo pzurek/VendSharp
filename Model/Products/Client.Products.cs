@@ -10,28 +10,23 @@ namespace Vend
 		public List<Product> GetProducts()
 		{
 			const string resourceName = "products";
-			var products = GetProducts(resourceName);
-			return products;
-		}
-
-		// Private method used to retrieve 2+ pages
-		List<Product> GetProducts(int page)
-		{
-			string pageResourceName = string.Format("products/?page={0}", page.ToString());
-			var products = GetProducts(pageResourceName);
+			var products = getProducts(resourceName);
 			return products;
 		}
 
 		// Generic method used by the both above
 		// recursively grabs subsequent pages
-		List<Product> GetProducts(string pageResourceName)
+		List<Product> getProducts(string resourceName, int page = 1)
 		{
-			var request = new RestRequest(pageResourceName, Method.GET);
+			var request = new RestRequest(resourceName, Method.GET);
+			if (page > 1) {
+				request.AddParameter("page", page);
+			}
 			var response = Execute<ProductListPage>(request);
 			var products = response.Products;
 			var pagination = response.Pagination;
 			if (pagination.Pages > pagination.Page) {
-				products.AddRange(GetProducts(pagination.Page + 1));
+				products.AddRange(getProducts(resourceName, pagination.Page + 1));
 			}
 			return products;
 		}
