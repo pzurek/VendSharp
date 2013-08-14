@@ -1,14 +1,6 @@
-using System;
-using System.Threading.Tasks;
 using System.Collections.Generic;
 
 using RestSharp;
-using RestSharp.Authenticators;
-using RestSharp.Extensions;
-using RestSharp.Contrib;
-using RestSharp.Validation;
-using RestSharp.Deserializers;
-using RestSharp.Serializers;
 
 namespace Vend
 {
