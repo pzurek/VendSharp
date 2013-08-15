@@ -27,11 +27,28 @@ namespace Vend
 
 			if (response.ErrorException != null)
 			{
-				const string message = "Error retrieving response.  Check inner details for more info.";
+				const string message = "Error retrieving response. Check inner details for more info.";
 				var exception = new ApplicationException(message, response.ErrorException);
 				throw exception;
 			}
 			return response.Data;
+		}
+
+		public IRestResponse Execute(IRestRequest request)
+		{
+			var client = new RestClient();
+			client.BaseUrl = BaseUrl;
+			client.Authenticator = new HttpBasicAuthenticator(Username, Password);
+
+			var response = client.Execute(request);
+
+			if (response.ErrorException != null)
+			{
+				const string message = "Error retrieving response. Check inner details for more info.";
+				var exception = new ApplicationException(message, response.ErrorException);
+				throw exception;
+			}
+			return response;
 		}
 	}
 }
