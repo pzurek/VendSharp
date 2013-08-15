@@ -7,7 +7,6 @@ namespace Vend
 	public partial class Client
 	{
 		public string BaseUrl;
-		public string StoreName;
 		public string Username;
 		public string Password;
 
