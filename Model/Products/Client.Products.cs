@@ -31,5 +31,22 @@ namespace Vend
 			}
 			return products;
 		}
+
+		/// <summary>
+		/// Deletes the product.
+		/// </summary>
+		/// <returns><c>true</c>, if product was deleted, <c>false</c> otherwise.</returns>
+		/// <param name="productId">Product identifier.</param>
+		public bool DeleteProduct(string productId)
+		{
+			var resourceName = productsResourceName + "/" + productId;
+			var request = new RestRequest(resourceName, Method.DELETE);
+			var response = Execute(request);
+			if (response.ErrorException == null) {
+				return true;
+			} else {
+				return false;
+			}
+		}
 	}
 }
