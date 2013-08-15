@@ -6,11 +6,12 @@ namespace Vend
 {
 	public partial class Client
 	{
+		const string productsResourceName = "products";
+
 		// The public method used to retrieve the first page
 		public List<Product> GetProducts()
 		{
-			const string resourceName = "products";
-			var products = getProducts(resourceName);
+			var products = getProducts(productsResourceName);
 			return products;
 		}
 
