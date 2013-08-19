@@ -85,10 +85,16 @@
     <Compile Include="Model\Outlets\Outlet.cs" />
     <Compile Include="Model\Outlets\OutletList.cs" />
     <Compile Include="Model\PaymentTypes\PaymentType.cs" />
-    <Compile Include="Model\PaymentTypes\Config.cs" />
     <Compile Include="Model\PaymentTypes\PaymentType2.cs" />
     <Compile Include="Model\Products\ProductType.cs" />
     <Compile Include="Model\PaymentTypes\PaymentTypeList.cs" />
+    <Compile Include="Model\Products\ProductResponse.cs" />
+    <Compile Include="Model\Config\Config.cs" />
+    <Compile Include="Model\Config\MigrateSql.cs" />
+    <Compile Include="Model\Config\Callbacks.cs" />
+    <Compile Include="Model\Config\ConfigRoot.cs" />
+    <Compile Include="Model\Config\Client.Config.cs" />
+    <Compile Include="Model\PaymentTypes\PaymentConfig.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -106,6 +112,7 @@
     <Folder Include="Properties\" />
     <Folder Include="VendTest\Properties\" />
     <Folder Include="Model\PaymentTypes\" />
+    <Folder Include="Model\Config\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="VendSharp.userprefs" />

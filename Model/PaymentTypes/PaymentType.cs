@@ -4,7 +4,7 @@ namespace Vend
 	{
 		public string Name { get; set; }
 		public string PaymentTypeId { get; set; }
-		public Config Config { get; set; }
+		public PaymentConfig Config { get; set; }
 		public PaymentType2 PaymentType2 { get; set; }
 	}
 }

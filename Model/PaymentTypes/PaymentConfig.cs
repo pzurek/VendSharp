@@ -1,6 +1,6 @@
 namespace Vend
 {
-	public class Config
+	public class PaymentConfig
 	{
 		public string Url { get; set; }
 	}
