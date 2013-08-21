@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 using RestSharp;
@@ -42,11 +43,11 @@ namespace Vend
 			var resourceName = productsResourceName + "/" + productId;
 			var request = new RestRequest(resourceName, Method.DELETE);
 			var response = Execute(request);
-			if (response.ErrorException == null) {
-				return true;
-			} else {
+			if (response.ErrorException != null) {
 				return false;
 			}
+			Console.WriteLine("Deleted a product with id: {0}", productId);
+			return true;
 		}
 	}
 }
