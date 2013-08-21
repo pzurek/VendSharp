@@ -7,46 +7,46 @@ namespace Vend
 	/// </summary>
 	public class RegisterSale : BaseApiObject
 	{
-		public string RegisterId { get; set; }
+		public virtual string RegisterId { get; set; }
+			    
+		public virtual string MarketId { get; set; }
+			    
+		public virtual string CustomerId { get; set; }
+			    
+		public virtual string CustomerName { get; set; }
+			    
+		public virtual Customer Customer { get; set; }
+			    
+		public virtual string UserId { get; set; }
+			    
+		public virtual string UserName { get; set; }
+			    
+		public virtual string SaleDate { get; set; }
+			    
+		public virtual string CreatedAt { get; set; }
+			    
+		public virtual string UpdatedAt { get; set; }
+			    
+		public virtual double TotalPrice { get; set; }
+			    
+		public virtual int TotalCost { get; set; }
+			    
+		public virtual double TotalTax { get; set; }
+			    
+		public virtual string TaxName { get; set; }
+			    
+		public virtual string Note { get; set; }
+			    
+		public virtual string Status { get; set; }
+			    
+		public virtual string ShortCode { get; set; }
+			    
+		public virtual string InvoiceNumber { get; set; }
+			    
+		public virtual List<string> RegisterSaleProducts { get; set; }
+			    
+		public virtual Totals Totals { get; set; }
 
-		public string MarketId { get; set; }
-
-		public string CustomerId { get; set; }
-
-		public string CustomerName { get; set; }
-
-		public Customer Customer { get; set; }
-
-		public string UserId { get; set; }
-
-		public string UserName { get; set; }
-
-		public string SaleDate { get; set; }
-
-		public string CreatedAt { get; set; }
-
-		public string UpdatedAt { get; set; }
-
-		public double TotalPrice { get; set; }
-
-		public int TotalCost { get; set; }
-
-		public double TotalTax { get; set; }
-
-		public string TaxName { get; set; }
-
-		public string Note { get; set; }
-
-		public string Status { get; set; }
-
-		public string ShortCode { get; set; }
-
-		public string InvoiceNumber { get; set; }
-
-		public List<string> RegisterSaleProducts { get; set; }
-
-		public Totals Totals { get; set; }
-
-		public List<string> RegisterSalePayments { get; set; }
+		public virtual List<string> RegisterSalePayments { get; set; }
 	}
 }
