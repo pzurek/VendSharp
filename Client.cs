@@ -1,6 +1,9 @@
 using System;
 
+using Newtonsoft.Json;
+
 using RestSharp;
+using RestSharp.Extensions;
 
 namespace Vend
 {
@@ -10,11 +13,17 @@ namespace Vend
 		public string Username;
 		public string Password;
 
+		JsonSerializer jsonSerializer;
+
 		public Client(string storeName, string username, string password)
 		{
 			BaseUrl = string.Format("https://{0}.vendhq.com/api/", storeName);
 			Username = username;
 			Password = password;
+
+			jsonSerializer = new JsonSerializer();
+			// That is the reason behind using Json.Net
+			jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
 		}
 
 		public T Execute<T>(IRestRequest request) where T : new()
