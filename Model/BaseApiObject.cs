@@ -1,4 +1,4 @@
-using System;
+using Newtonsoft.Json;
 
 namespace Vend
 {
@@ -9,6 +9,7 @@ namespace Vend
 		/// UUIDs are intended to be unique, but are not unpredictable or unguessable.
 		/// </summary>
 		/// <value>The identifier.</value>
+		[JsonIgnore]
 		public string Id { get; set; }
 	}
 }
