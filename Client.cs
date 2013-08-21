@@ -59,5 +59,16 @@ namespace Vend
 			}
 			return response;
 		}
+
+		public bool DeleteResource(string resourceName, string id)
+		{
+			var resourceString = resourceName + "/" + id;
+			var request = new RestRequest(resourceString, Method.DELETE);
+			var response = Execute(request);
+			if (response.ErrorException != null) {
+				return false;
+			}
+			return true;
+		}
 	}
 }
