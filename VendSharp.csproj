@@ -34,6 +34,9 @@
     <Reference Include="RestSharp">
       <HintPath>..\RestSharp\RestSharp\bin\Debug\RestSharp.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Downloads\Json50r6\Bin\Net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\BaseApiObject.cs" />
@@ -51,7 +54,6 @@
     <Compile Include="Model\Registers\Client.Registers.cs" />
     <Compile Include="Model\Taxes\Tax.cs" />
     <Compile Include="Model\Users\Client.Users.cs" />
-    <Compile Include="VendTest\Program.cs" />
     <Compile Include="Model\Customers\Client.Customers.cs" />
     <Compile Include="Model\Suppliers\Supplier.cs" />
     <Compile Include="Model\Suppliers\SupplierList.cs" />
@@ -95,6 +97,7 @@
     <Compile Include="Model\Config\ConfigRoot.cs" />
     <Compile Include="Model\Config\Client.Config.cs" />
     <Compile Include="Model\PaymentTypes\PaymentConfig.cs" />
+    <Compile Include="Model\Taxes\TaxResponse.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
