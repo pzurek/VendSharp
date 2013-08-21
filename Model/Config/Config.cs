@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace Vend
 {
 	/// <summary>
-	/// Config.
+	/// Global store config object.
 	/// </summary>
 	public class Config
 	{
