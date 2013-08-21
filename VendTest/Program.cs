@@ -10,9 +10,10 @@ namespace VendTest
 		{
 			var client = new Client("piotr", "piotr@vendhq.com", "v");
 
-			TestGetConfig(client);
-			TestGetMethods(client);
-//			TestProduct(client);
+//			TestGetConfig(client);
+//			TestGetMethods(client);
+//			TestDeleteProduct(client);
+			TestCreateTax(client);
 		}
 
 		static void TestGetConfig(Client client)
@@ -21,7 +22,7 @@ namespace VendTest
 			Console.WriteLine("Logged in as: {0} to {1}.vendhq.com", config.UserName, config.DomainPrefix);
 		}
 
-		static void TestProduct(Client client)
+		static void TestDeleteProduct(Client client)
 		{
 //			var product = client.CreateProduct();
 			var result = client.DeleteProduct("d8a3c217-ee66-11e2-a415-bc764e10976c");
