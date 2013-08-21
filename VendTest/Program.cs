@@ -27,6 +27,15 @@ namespace VendTest
 			var result = client.DeleteProduct("d8a3c217-ee66-11e2-a415-bc764e10976c");
 		}
 
+		static void TestCreateTax(Client client)
+		{
+			Tax tax = new Tax();
+			tax.Name = "Test Tax from API";
+			tax.Rate = 0.77;
+			var createResult = client.CreateTax(tax);
+			Console.WriteLine("Created a tax with id: {0}", createResult.Id);
+		}
+
 		static void TestGetMethods(Client client)
 		{
 			Stopwatch totalStopwatch = new Stopwatch();
