@@ -8,24 +8,29 @@ namespace VendTest
 	{
 		public static void Main(string[] args)
 		{
-			var client = new Client("piotr", "piotr@vendhq.com", "v");
+			var client = new Client("piotr", "p.zurek@gmail.com", "v");
 
-//			TestGetConfig(client);
-//			TestGetMethods(client);
+			TestGetConfig(client);
+			TestGetMethods(client);
 //			TestDeleteProduct(client);
-			TestCreateTax(client);
+//			TestCreateTax(client);
+//			TestCreateCustomer(client);
 		}
 
 		static void TestGetConfig(Client client)
 		{
 			Config config = client.GetConfig();
+			if (config == null) {
+				Console.WriteLine("Failed to retrieve config");
+				return;
+			}
 			Console.WriteLine("Logged in as: {0} to {1}.vendhq.com", config.UserName, config.DomainPrefix);
 		}
 
 		static void TestDeleteProduct(Client client)
 		{
 //			var product = client.CreateProduct();
-			var result = client.DeleteProduct("d8a3c217-ee66-11e2-a415-bc764e10976c");
+//			var result = client.DeleteTax("f5bea344-0d5a-11e3-a415-bc764e10976c");
 		}
 
 		static void TestCreateTax(Client client)
@@ -35,6 +40,23 @@ namespace VendTest
 			tax.Rate = 0.77;
 			var createResult = client.CreateTax(tax);
 			Console.WriteLine("Created a tax with id: {0}", createResult.Id);
+		}
+
+		static void TestCreateCustomer(Client client)
+		{
+			Customer customer = new Customer() {
+				CustomerCode = "Test code",
+				CompanyName = "Test company",
+				FirstName = "TestFirst",
+				LastName = "TestLast",
+				Phone = "TestPhoneNo.",
+				Email = "test@example.com",
+				Website = "www.example.com",
+				PostalCountryId = "US"
+			};
+
+			var createResult = client.CreateCustomer(customer);
+			Console.WriteLine("Created a customer with id: {0}", createResult.Id);
 		}
 
 		static void TestGetMethods(Client client)
@@ -58,7 +80,9 @@ namespace VendTest
 			Console.WriteLine("Got {0} registers in {1} s", registers.Count, singleStopwatch.ElapsedMilliseconds / 1000.000);
 			singleStopwatch.Reset();
 			singleStopwatch.Start();
-			var products = client.GetProducts();
+//			var products = client.GetProducts();
+			var productTask = client.GetProductsAsync();
+			var products = productTask.Result;
 			singleStopwatch.Stop();
 			Console.WriteLine("Got {0} products in {1} s", products.Count, singleStopwatch.ElapsedMilliseconds / 1000.000);
 			singleStopwatch.Reset();

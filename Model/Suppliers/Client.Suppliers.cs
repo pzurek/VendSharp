@@ -1,17 +1,29 @@
 using System.Collections.Generic;
 
-using RestSharp;
-
 namespace Vend
 {
 	public partial class Client
 	{
+		const string supplierResourceName = "supplier"; // TODO: should be "suppliers"
+
 		public List<Supplier> GetSuppliers()
 		{
-			const string resourceName = "supplier"; // TODO: should be "suppliers"
-			var request = new RestRequest(resourceName, Method.GET);
-			var suppliers = Execute<SupplierList>(request).Suppliers;
-			return suppliers;
+			return getResourceListAsync<SupplierList>(supplierResourceName).Result.Suppliers;
+		}
+
+		public Supplier CreateSuplier(Supplier supplier)
+		{
+			return createResourceAsync<Supplier>(supplier, supplierResourceName).Result;
+		}
+
+		public Supplier UpdateSupplier(Supplier supplier)
+		{
+			return createResourceAsync<Supplier>(supplier, supplierResourceName).Result;
+		}
+
+		public bool DeleteSupplier(string id)
+		{
+			return deleteResourceAsync(supplierResourceName, id).Result;
 		}
 	}
 }

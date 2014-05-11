@@ -1,47 +1,28 @@
+using Newtonsoft.Json;
+
 namespace Vend
 {
 	public class RegisterSalePayment : BaseApiObject
 	{
-		/// <summary>
-		/// Gets or sets the payment type identifier.
-		/// </summary>
-		/// <value>The payment type identifier.</value>
+		[JsonProperty("payment_type_id")]
 		public string PaymentTypeId { get; set; }
 
-		/// <summary>
-		/// Gets or sets the register identifier.
-		/// </summary>
-		/// <value>The register identifier.</value>
+		[JsonProperty("register_id")]
 		public string RegisterId { get; set; }
 
-		/// <summary>
-		/// Gets or sets the retailer payment type identifier.
-		/// </summary>
-		/// <value>The retailer payment type identifier.</value>
+		[JsonProperty("retailer_payment_type_id")]
 		public string RetailerPaymentTypeId { get; set; }
 
-		/// <summary>
-		/// Gets or sets the name.
-		/// </summary>
-		/// <value>The name.</value>
+		[JsonProperty("name")]
 		public string Name { get; set; }
 
-		/// <summary>
-		/// Gets or sets the label.
-		/// </summary>
-		/// <value>The label.</value>
+		[JsonProperty("label")]
 		public string Label { get; set; }
 
-		/// <summary>
-		/// Gets or sets the payment date.
-		/// </summary>
-		/// <value>The payment date.</value>
+		[JsonProperty("payment_date")]
 		public string PaymentDate { get; set; }
 
-		/// <summary>
-		/// Gets or sets the amount.
-		/// </summary>
-		/// <value>The amount.</value>
+		[JsonProperty("amount")]
 		public double Amount { get; set; }
 	}
 }

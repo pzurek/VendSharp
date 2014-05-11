@@ -1,5 +1,7 @@
 using System;
 
+using Newtonsoft.Json;
+
 namespace Vend
 {
 	/// <summary>
@@ -7,115 +9,65 @@ namespace Vend
 	/// </summary>
 	public class Register : BaseApiObject
 	{
-		/// <summary>
-		/// Gets or sets the name.
-		/// </summary>
-		/// <value>The name.</value>
+		[JsonProperty("name")]
 		public string Name { get; set; }
 
-		/// <summary>
-		/// Gets or sets a value indicating whether this <see cref="Vend.Register"/> should print the recept.
-		/// </summary>
-		/// <value><c>true</c> if it should print the recept; otherwise, <c>false</c>.</value>
+		[JsonProperty("outlet_id")]
+		public string OutletId { get; set; }
+
+		[JsonProperty("print_receipt")]
 		public string PrintRecept { get; set; }
 
-		/// <summary>
-		/// Gets or sets a value indicating whether this <see cref="Vend.Register"/> should email the receipt.
-		/// </summary>
-		/// <value><c>true</c> if it should email the receipt; otherwise, <c>false</c>.</value>
+		[JsonProperty("email_receipt")]
 		public string EmailReceipt { get; set; }
 
-		/// <summary>
-		/// Gets or sets a value indicating whether this <see cref="Vend.Register"/> asks for note on save.
-		/// </summary>
-		/// <value><c>true</c> if asks for note on save; otherwise, <c>false</c>.</value>
+		[JsonProperty("ask_for_note_on_save")]
 		public string AskForNoteOnSave { get; set; }
 
-		/// <summary>
-		/// Gets or sets a value indicating whether this <see cref="Vend.Register"/> prints a note on receipt.
-		/// </summary>
-		/// <value><c>true</c> if it prints a note on receipt; otherwise, <c>false</c>.</value>
+		[JsonProperty("print_note_on_receipt")]
 		public string PrintNoteOnReceipt { get; set; }
 
-
-		/// <summary>
-		/// Gets or sets a value indicating whether this <see cref="Vend.Register"/> should ask for a user on sale.
-		/// </summary>
-		/// <value><c>true</c> if asks for a user on sale; otherwise, <c>false</c>.</value>
+		[JsonProperty("ask_for_user_on_sale")]
 		public string AskForUserOnSale { get; set; }
 
-		/// <summary>
-		/// Gets or sets a value indicating whether this <see cref="Vend.Register"/> show discounts on receipt.
-		/// </summary>
-		/// <value><c>true</c> if show discounts on receipt; otherwise, <c>false</c>.</value>
+		[JsonProperty("show_discounts_on_receipt")]
 		public string ShowDiscountsOnReceipt { get; set; }
 
-		/// <summary>
-		/// Gets or sets the receipt header.
-		/// </summary>
-		/// <value>The receipt header.</value>
+		[JsonProperty("receipt_header")]
 		public string ReceiptHeader { get; set; }
 
-		/// <summary>
-		/// Gets or sets a value indicating whether this <see cref="Vend.Register"/> receipt is barcoded.
-		/// </summary>
-		/// <value><c>true</c> if receipt is barcoded; otherwise, <c>false</c>.</value>
+		[JsonProperty("receipt_barcoded")]
 		public string ReceiptBarcoded { get; set; }
 
-		/// <summary>
-		/// Gets or sets the receipt footer.
-		/// </summary>
-		/// <value>The receipt footer.</value>
+		[JsonProperty("receipt_footer")]
 		public string ReceiptFooter { get; set; }
 
-		/// <summary>
-		/// Gets or sets the receipt style class.
-		/// </summary>
-		/// <value>The receipt style class.</value>
+		[JsonProperty("receipt_style_class")]
 		public string ReceiptStyleClass { get; set; }
 
-		/// <summary>
-		/// Gets or sets the invoice prefix.
-		/// </summary>
-		/// <value>The invoice prefix.</value>
+		[JsonProperty("invoice_prefix")]
 		public string InvoicePrefix { get; set; }
-	
-		/// <summary>
-		/// Gets or sets the invoice suffix.
-		/// </summary>
-		/// <value>The invoice suffix.</value>
+
+		[JsonProperty("invoice_suffix")]
 		public string InvoiceSuffix { get; set; }
 
-		/// <summary>
-		/// Gets or sets the invoice sequence.
-		/// </summary>
-		/// <value>The invoice sequence.</value>
+		[JsonProperty("invoice_sequence")]
 		public int InvoiceSequence { get; set; }
 
+		[JsonProperty("register_open_count_sequence")]
+		public string RegisterOpenCountSequence { get; set; }
 
-		/// <summary>
-		/// Gets or sets the register open count sequence.
-		/// </summary>
-		/// <value>The register open count sequence.</value>
-		public int RegisterOpenCountSequence { get; set; }
+		[JsonProperty("register_open_time")]
+		public string RegisterOpenTime { get; set; }
 
-		/// <summary>
-		/// Gets or sets the open time.
-		/// </summary>
-		/// <value>The open time.</value>
-		public DateTime OpenTime { get; set; }
+		[JsonProperty("register_close_time")]
+		public string CloseTime { get; set; }
 
-		/// <summary>
-		/// Gets or sets the close time.
-		/// </summary>
-		/// <value>The close time.</value>
-		public DateTime CloseTime { get; set; }
+		[JsonProperty("quick_keys_template")]
+		public QuickKeysTemplate QuickKeysTemplate { get; set; }
 
-		// TODO: This is bullshit now
-		public string QuickKeysTemplate { get; set; }
-
-		// TODO: Load of crock. Fix it man!
-		public string Receipt { get; set; }
+		[JsonProperty("receipt")]
+		public Receipt Receipt { get; set; }
 
 	}
 }

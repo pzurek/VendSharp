@@ -10,7 +10,7 @@ namespace Vend
 		/// Gets or sets a value indicating whether this instance is default.
 		/// </summary>
 		/// <value><c>true</c> if this instance is default; otherwise, <c>false</c>.</value>
-		[JsonProperty("default")]
+		[JsonIgnore]
 		public int IsDefault { get; set; }
 
 		/// <summary>

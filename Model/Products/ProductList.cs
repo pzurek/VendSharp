@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 
+using Newtonsoft.Json;
+
 namespace Vend
 {
-	public class ProductListPage
+	public class ProductList : PaginatedList
 	{
-		public Pagination Pagination { get; set; }
-
+		[JsonProperty("products")]
 		public List<Product> Products { get; set; }
 	}
 }

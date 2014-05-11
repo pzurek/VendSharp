@@ -9,7 +9,8 @@ namespace Vend
 		/// UUIDs are intended to be unique, but are not unpredictable or unguessable.
 		/// </summary>
 		/// <value>The identifier.</value>
-		[JsonIgnore]
+//		[JsonIgnore]
+		[JsonProperty("id")]
 		public string Id { get; set; }
 	}
 }
